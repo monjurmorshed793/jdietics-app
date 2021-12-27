@@ -3,11 +3,26 @@
 <div>
   <router-outlet name="navbar"></router-outlet>
 </div>
+<!--<div class="container-fluid">-->
 
-<div class="container-fluid">
-  <div class="card jh-card">
-    <router-outlet></router-outlet>
-  </div>
+<mat-drawer-container class="app-sidenav-container" autosize>
+  <mat-drawer #drawer class="app-sidenav mat-elevation-z10" [mode]="isScreenSmall ? 'over' : 'side'" [opened]="!isScreenSmall">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/account']">Account</a>
+      <a mat-list-item [routerLink]="['/home']">Account 2</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="card jh-card" style="flex-shrink: 0">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
 
-  <jhi-footer></jhi-footer>
-</div>
+<!--
+      <div class="card jh-card" style="flex-shrink: 0;">
+        <router-outlet></router-outlet>
+      </div>
+-->
+<jhi-footer></jhi-footer>
+<!--</div>-->
