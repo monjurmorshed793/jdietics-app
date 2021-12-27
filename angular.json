@@ -108,6 +108,7 @@
   },
   "defaultProject": "jdietics",
   "cli": {
+    "analytics": "8568c051-dd68-4c4b-a42d-71e19d5dd9a4",
     "packageManager": "npm"
   }
 }
